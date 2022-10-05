@@ -58,7 +58,7 @@
   },
   "scripts": {
     "start": "PORT=3010 react-app-rewired start",
-    "start-home": "PORT=3010 env-cmd -e development-home react-app-rewired start",
+    "start-home": "PORT=3012 env-cmd -e development-home react-app-rewired start",
     "start-app": "PORT=3011 env-cmd -e development-app react-app-rewired start",
     "start-win": "set PORT=3010&react-app-rewired start",
     "build": "INLINE_RUNTIME_CHUNK=false react-app-rewired build",

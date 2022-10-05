@@ -370,7 +370,7 @@ export const Exchange = forwardRef((props, ref) => {
   const [updatedPositions, setUpdatedPositions] = useState({});
 
   const hideBanner = () => {
-    const hiddenLimit = new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000);
+    const hiddenLimit = new Date(new Date().getTime() + 20 * 24 * 60 * 60 * 1000);
     setBannerHidden(hiddenLimit);
     setShowBanner(false);
   };
@@ -597,9 +597,8 @@ export const Exchange = forwardRef((props, ref) => {
 
       let message;
       if (sizeDelta.eq(0)) {
-        message = `Deposited ${formatAmount(collateralDelta, USD_DECIMALS, 2, true)} USD into ${tokenSymbol} ${
-          isLong ? "Long" : "Short."
-        }`;
+        message = `Deposited ${formatAmount(collateralDelta, USD_DECIMALS, 2, true)} USD into ${tokenSymbol} ${isLong ? "Long" : "Short."
+          }`;
       } else {
         message = `Increased ${tokenSymbol} ${isLong ? "Long" : "Short"}, +${formatAmount(
           sizeDelta,
@@ -622,9 +621,8 @@ export const Exchange = forwardRef((props, ref) => {
 
       let message;
       if (sizeDelta.eq(0)) {
-        message = `Withdrew ${formatAmount(collateralDelta, USD_DECIMALS, 2, true)} USD from ${tokenSymbol} ${
-          isLong ? "Long" : "Short"
-        }.`;
+        message = `Withdrew ${formatAmount(collateralDelta, USD_DECIMALS, 2, true)} USD from ${tokenSymbol} ${isLong ? "Long" : "Short"
+          }.`;
       } else {
         message = `Decreased ${tokenSymbol} ${isLong ? "Long" : "Short"}, -${formatAmount(
           sizeDelta,
@@ -657,9 +655,8 @@ export const Exchange = forwardRef((props, ref) => {
       const indexTokenItem = getToken(chainId, indexToken);
       const tokenSymbol = indexTokenItem.isWrapped ? getConstant(chainId, "nativeTokenSymbol") : indexTokenItem.symbol;
 
-      const message = `Could not increase ${tokenSymbol} ${
-        isLong ? "Long" : "Short"
-      } within the allowed slippage, you can adjust the allowed slippage in the settings on the top right of the page.`;
+      const message = `Could not increase ${tokenSymbol} ${isLong ? "Long" : "Short"
+        } within the allowed slippage, you can adjust the allowed slippage in the settings on the top right of the page.`;
 
       pushErrorNotification(chainId, message, e);
 
@@ -689,9 +686,8 @@ export const Exchange = forwardRef((props, ref) => {
       const indexTokenItem = getToken(chainId, indexToken);
       const tokenSymbol = indexTokenItem.isWrapped ? getConstant(chainId, "nativeTokenSymbol") : indexTokenItem.symbol;
 
-      const message = `Could not decrease ${tokenSymbol} ${
-        isLong ? "Long" : "Short"
-      } within the allowed slippage, you can adjust the allowed slippage in the settings on the top right of the page.`;
+      const message = `Could not decrease ${tokenSymbol} ${isLong ? "Long" : "Short"
+        } within the allowed slippage, you can adjust the allowed slippage in the settings on the top right of the page.`;
 
       pushErrorNotification(chainId, message, e);
 
